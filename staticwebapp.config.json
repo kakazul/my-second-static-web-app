@@ -27,10 +27,11 @@
       "allowedRoles": ["authenticated"]
     }
   ],
-  "responseOverrides": {
-    "401": {
-      "redirect": "/.auth/login/b2c",
-      "statusCode": 302
-    }
-  }
+  "platformErrorOverrides": [
+        {
+            "errorType": "Unauthenticated",
+            "statusCode": "302",
+            "serve": "/"
+        }
+    ]
 }
