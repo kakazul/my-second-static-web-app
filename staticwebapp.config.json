@@ -23,15 +23,14 @@
   },
   "routes": [
     {
-      "route": "/",
-      "allowedRoles": ["anonymous"]
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
   ],
-  "platformErrorOverrides": [
-        {
-            "errorType": "access_denied",
-            "statusCode": "302",
-            "serve": "/"
-        }
-    ]
+  "responseOverrides": {
+    "401": {
+      "redirect": "/.auth/login/b2c",
+      "statusCode": 302
+    }
+  }
 }
