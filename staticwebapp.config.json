@@ -29,7 +29,7 @@
   ],
   "platformErrorOverrides": [
         {
-            "errorType": "AccessDenied",
+            "errorType": "access_denied",
             "statusCode": "302",
             "serve": "/"
         }
