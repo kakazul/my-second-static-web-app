@@ -29,7 +29,7 @@
   ],
   "responseOverrides": {
     "401": {
-      "redirect": "/",
+      "redirect": "",
       "statusCode": 302
     }
   }
