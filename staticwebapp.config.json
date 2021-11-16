@@ -23,8 +23,8 @@
   },
   "routes": [
     {
-      "route": "/*",
-      "allowedRoles": ["authenticated"]
+      "route": "/",
+      "allowedRoles": ["anonymous"]
     }
   ],
   "platformErrorOverrides": [
