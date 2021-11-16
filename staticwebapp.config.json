@@ -19,7 +19,7 @@
                 }
             }
         }
-    }
+    },
     "responseOverrides": {
     "401": {
       "redirect": "/.auth/login/b2c",
