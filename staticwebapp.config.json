@@ -21,12 +21,17 @@
       }
     }
   },
- "routes": [],
-  "platformErrorOverrides": [
+ "routes": [
     {
-      "errorType": "Unauthenticated",
-      "serve": "/200.html",
-      "statusCode": 200
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
-  ]
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/.auth/login/b2c",
+      "statusCode": 302
+    }
+  }
+}
 }
