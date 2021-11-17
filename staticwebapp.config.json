@@ -25,7 +25,7 @@
     {
       "errorType": "Unauthenticated",
       "statusCode": "302",
-      "serve": "/.auth/login/b2c"
+      "serve": "/"
     }
   ]
 }
