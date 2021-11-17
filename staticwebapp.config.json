@@ -21,55 +21,57 @@
       }
     }
   },
-  "navigationFallback": {
-    "rewrite": "/index.html"
-  },
-  "responseOverrides": {
-    "401": {
-      "redirect": "/",
-      "statusCode": 302
+  "routes": [
+    {
+      "route": "/login",
+      "serve": "/.auth/login/b2c"
+    },
+    {
+      "route": "/specials",
+      "serve": "/deals",
+      "statusCode": 301
     }
-  },
+  ],
  "platformErrorOverrides": [
    {
       "errorType": "Unauthenticated",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
    },
    {
       "errorType": "Unauthenticated_AccessDenied",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "Unauthorized_InsufficientUserInformation",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "Unauthorized_InvalidInvitationLink",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "Unauthorized_MissingRoles",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "Unauthorized_TooManyUsers",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "Unauthorized_Unknown",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     },
     {
       "errorType": "access_denied",
       "statusCode": "302",
-      "serve": "/"
+      "serve": "/login"
     }
   ]
 }
