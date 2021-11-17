@@ -22,8 +22,13 @@
     }
   },
  "platformErrorOverrides": [
-    {
+   {
       "errorType": "Unauthenticated",
+      "statusCode": "302",
+      "serve": "/"
+   },
+   {
+      "errorType": "Unauthenticated_AccessDenied",
       "statusCode": "302",
       "serve": "/"
     }
