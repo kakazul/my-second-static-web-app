@@ -24,54 +24,37 @@
   "routes": [
     {
       "route": "/login",
-      "serve": "/.auth/login/b2c"
+      "rewrite": "/.auth/login/b2c"
     },
     {
       "route": "/specials",
-      "serve": "/deals",
+      "redirect": "/deals",
       "statusCode": 301
     }
   ],
- "platformErrorOverrides": [
-   {
-      "errorType": "Unauthenticated",
-      "statusCode": "302",
-      "serve": "/login"
-   },
-   {
-      "errorType": "Unauthenticated_AccessDenied",
-      "statusCode": "302",
-      "serve": "/login"
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  },
+  "responseOverrides": {
+    "400": {
+      "rewrite": "/invalid-invitation-error.html"
     },
-    {
-      "errorType": "Unauthorized_InsufficientUserInformation",
-      "statusCode": "302",
-      "serve": "/login"
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
     },
-    {
-      "errorType": "Unauthorized_InvalidInvitationLink",
-      "statusCode": "302",
-      "serve": "/login"
+    "403": {
+      "rewrite": "/custom-forbidden-page.html"
     },
-    {
-      "errorType": "Unauthorized_MissingRoles",
-      "statusCode": "302",
-      "serve": "/login"
-    },
-    {
-      "errorType": "Unauthorized_TooManyUsers",
-      "statusCode": "302",
-      "serve": "/login"
-    },
-    {
-      "errorType": "Unauthorized_Unknown",
-      "statusCode": "302",
-      "serve": "/login"
-    },
-    {
-      "errorType": "access_denied",
-      "statusCode": "302",
-      "serve": "/login"
+    "404": {
+      "rewrite": "/404.html"
     }
-  ]
+  },
+  "globalHeaders": {
+    "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  }
 }
