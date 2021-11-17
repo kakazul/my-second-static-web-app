@@ -31,6 +31,36 @@
       "errorType": "Unauthenticated_AccessDenied",
       "statusCode": "302",
       "serve": "/"
+    },
+    {
+      "errorType": "Unauthorized_InsufficientUserInformation",
+      "statusCode": "302",
+      "serve": "/"
+    },
+    {
+      "errorType": "Unauthorized_InvalidInvitationLink",
+      "statusCode": "302",
+      "serve": "/"
+    },
+    {
+      "errorType": "Unauthorized_MissingRoles",
+      "statusCode": "302",
+      "serve": "/"
+    },
+    {
+      "errorType": "Unauthorized_TooManyUsers",
+      "statusCode": "302",
+      "serve": "/"
+    },
+    {
+      "errorType": "Unauthorized_Unknown",
+      "statusCode": "302",
+      "serve": "/"
+    },
+    {
+      "errorType": "access_denied",
+      "statusCode": "302",
+      "serve": "/"
     }
   ]
 }
